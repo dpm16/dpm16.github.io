@@ -1,0 +1,259 @@
+@page{
+	margin: 0	;
+}
+
+html{
+	background: gray;
+    height:100%; 
+    margin: 0 !important; 
+    padding: 0 !important;
+}
+
+@media print{
+	html{
+		background: white;
+	    height:100%; 
+	    margin: 0 !important; 
+	    padding: 0 !important;
+	}
+}
+		
+body{
+	position: absolute;
+	width: 210mm;
+	height: auto;
+	background: white;
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+}
+
+h1{
+	font-size: 2.75pc;
+}
+
+h2{
+	width: 100%;
+	border-bottom: 0.5mm solid black;
+	margin-top: 2mm;
+	margin-bottom: 2mm;
+}
+
+h3{
+	margin: 0;
+}
+
+ul{
+    list-style: none;
+	margin-top: 1mm;
+	margin-bottom: 1mm;
+	padding-left:0;
+}
+
+ul li:not(:first-child) {
+	margin-top:2mm;
+}
+
+li{
+	border-left: black solid 0.5mm;	
+	padding-left: 4mm;
+}
+
+li::before{
+    content: "";
+    position: absolute;
+    height: 3mm;
+    width: 3mm;
+    background: white;
+    border-radius: 50%;
+	border: solid 0.5mm black;
+    margin-left: -6.2mm;
+}
+
+.list-title{
+	font-weight:bold;
+}
+
+.list-date{
+	float:right;
+	padding-right:2mm;
+	font-style:italic;
+	color:#384E77;
+}
+
+.list-start{
+}
+
+.list-content{
+}
+
+.left-side{
+	width:	115mm;
+}
+
+.right-side{
+	float: right;
+	width: 79mm;
+	height: auto;
+}
+
+
+.blue{
+	color:#001a34;
+}
+
+.icon{
+	width:7mm !important;
+}
+
+.content{
+	margin-top: 5mm;
+	margin-bottom: 5mm;
+	margin-left: 5mm;
+	margin-right: 5mm;
+}
+
+.name-block{
+	width: 100%;
+	height: auto;
+	border-bottom: 0.5mm solid black;
+}
+
+
+.inline{
+	display: inline-block;
+	margin: 0;
+}
+
+.block{
+	display: block;
+	width: auto;
+	margin: 0
+}
+
+.padding-right{
+	padding-right: 23mm;
+}
+
+.awards-list{
+	width: 60mm;
+	padding-right:8mm;
+}
+
+.current{
+	padding-right: 12.5mm;
+}
+
+.education{
+	width: 100%;
+	height: auto;	
+}
+
+.experience{
+	width: 100%;
+	height: auto;	
+}
+
+.awards{
+	width: 100%;
+	height: auto;
+}
+
+.awards li{
+	padding-left: 0;
+	border: none;
+}
+
+.awards li::before{
+	display: none;
+}
+
+.awards ul li:nth-child(2)	{
+	margin: 0;
+}
+
+.blurb{
+	background: #ADD8E6;
+	margin: 5mm;
+	padding: 2mm;
+}
+
+.blurb p{
+	margin: 0;
+}
+
+.projects{
+	width: 100%;
+	height: auto;
+}
+
+.projects .project:not(:last-child){
+	padding-right: 2mm;
+}
+
+.project{
+	width: 37.5mm;
+}
+
+.project p{
+	margin: 0;
+}
+
+.skills{
+	width: 100%;
+	height: auto;
+}
+
+.skills h2{
+	width: 100%;
+}
+
+.skills ul{
+	padding-left:27mm;
+}
+
+.skills li::before{
+    background: none;
+    color: #384E77;
+    position: absolute;
+    height: auto;
+    width: 28mm;
+    border: none;
+    margin-left: -32mm;
+}
+
+.skills p{
+	margin:0;
+}
+
+.skills li:nth-child(1)::before{
+	content: "Certifications";
+}
+
+.skills li:nth-child(2)::before{
+	content: "Spoken Languages";
+}
+
+.skills li:nth-child(3)::before{
+	content: "Programming Languages";
+}
+
+.skills li:nth-child(4)::before{
+	content: "Software Proficiencies";
+}
+
+.skills li:nth-child(5)::before{
+	content: "Interests and hobbies";
+}
+
+.qr-container{
+	width: 100%;
+	height: 47.5mm;
+}
+
+.qr{
+	position: absolute;
+	width: 45mm;
+	height: 45mm;
+	margin-top: 2.5mm;
+	margin-left: 17.5mm;
+}
