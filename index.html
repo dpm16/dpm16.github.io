@@ -3,12 +3,46 @@
 <link rel="stylesheet" type="text/css" href="stylesheet.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-<link rel=“shortcut icon” type=“image/x-icon” href="/favicon.ico">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" type="text/css" />
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<script src="script.js"></script>
 </head>
 <title>Benjamin Carrier</title>
-<body>
-<h1>My Kool Website</h1>
+<body id="displayArea" onmousemove="getPos(event)" onresize="resize()" onload="resize()">
+	<section>
+
+		<img src="images/city-min.jpg" class="city">
+		<img src="images/reflection-min.jpg" class="reflection" id="reflection">
+
+			<div class="wall" id="wall">
+				<div class="obscure">
+					<div class="obscure1"></div>
+					<div class="obscure2"></div>
+					<div class="obscure3"></div>
+				</div>
+				<div class="window">
+					<div class="frame1">
+						<div class="panel1"></div>
+					</div>
+					<div class="frame2">
+						<div class="panel2"></div>
+					</div>
+					<div class="frame3">
+						<div class="panel3"></div>
+					</div>
+				</div>
+			</div>
+		<div class="desk" id="desk"></div>
+		<div class="screen" id="screen"></div>
+
+		<img src="images/computer-min.png" class="computer" id="layer1">
+	</section>
+	<div class="showpos" id="showpos"></div>
+	<div class="showport" id="showport"></div>
+	<div class="showrelpos" id="showrelpos"></div>
+	<div class="showaspect" id="showaspect"></div>
 </body>
 
 </html>
