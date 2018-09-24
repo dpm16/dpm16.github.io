@@ -8,7 +8,14 @@ html{
 }
 
 body{
+	display: none;
 	margin: 0;
+    opacity: 1;
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+         -o-animation: fadein 2s; /* Opera < 12.1 */
+            animation: fadein 2s;
 }
 
 h1{
@@ -44,8 +51,8 @@ h2{
 	width: 80%;
 	height: 90%;
 	object-fit: cover;
-    opacity: 0.1;
-    filter: alpha(opacity=10); /* For IE8 and earlier */
+    opacity: 0.05;
+    filter: alpha(opacity=5); /* For IE8 and earlier */
 	z-index: 3;
 }
 
@@ -183,7 +190,7 @@ h2{
     border-right: 10px solid #e9d8c7;
 }
 .showpos{
-	display: block;
+	display: none;
 	position: absolute;
 	bottom: 0;
 	right: 0;
@@ -191,7 +198,7 @@ h2{
 }
 
 .showrelpos{
-	display: block;
+	display: none;
 	position: absolute;
 	bottom: 20px;
 	right: 0;
@@ -199,7 +206,7 @@ h2{
 }
 
 .showport{
-	display: block;
+	display: none;
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -207,31 +214,149 @@ h2{
 }
 
 .showaspect{
-	display: block;
+	display: none;
 	position: absolute;
 	bottom: 20px;
 	left: 0;
 	z-index:99;
 }
 
-.test{
-	position: relative;
-	margin: auto;
-	background: blue;
-	width: 470px;
-	height: 28.2vw;
-	z-index: 5;
-	display: flex;
-	align-content: center;
-}
-
 
 .screen{
+	display: none;
 	position: absolute;
-	background: orange;
+	justify-content: center;
+	align-items: center;
 	width: 49.8vw;
 	height: 28.2vw;
 	left: 26vw;
 	z-index: 5;
+	flex-direction: column;
 }
 
+#screen-content{
+	display: none;
+	opacity: 0;
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+         -o-animation: fadein 2s; /* Opera < 12.1 */
+            animation: fadein 2s;
+}
+
+#loading{
+	opacity: 1;
+    -webkit-animation: fadeinout 3s forwards ease-in-out; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadeinout 3s forwards ease-in-out; /* Firefox < 16 */
+        -ms-animation: fadeinout 3s forwards ease-in-out; /* Internet Explorer */
+         -o-animation: fadeinout 3s forwards ease-in-out; /* Opera < 12.1 */
+            animation: fadeinout 3s forwards ease-in-out;
+}
+
+.lds-ring {
+	margin: auto;
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 51px;
+  height: 51px;
+  margin: 6px;
+  border: 6px solid #a0a0a0;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #a0a0a0 transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
+
+
+@keyframes fadeinout {
+    0% { opacity: 0; }
+    25%   { opacity: 1; }
+    75%   { opacity: 1; }
+    100%   { opacity: 0; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadeinout {
+    0% { opacity: 0; }
+    25%   { opacity: 1; }
+    75%   { opacity: 1; }
+    100%   { opacity: 0; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadeinout {
+    0% { opacity: 0; }
+    25%   { opacity: 1; }
+    75%   { opacity: 1; }
+    100%   { opacity: 0; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadeinout {
+    0% { opacity: 0; }
+    25%   { opacity: 1; }
+    75%   { opacity: 1; }
+    100%   { opacity: 0; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadeinout {
+    0% { opacity: 0; }
+    25%   { opacity: 1; }
+    75%   { opacity: 1; }
+    100%   { opacity: 0; }
+}

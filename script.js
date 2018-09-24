@@ -1,3 +1,14 @@
+window.addEventListener("DOMContentLoaded", function(event) {
+	document.getElementById("displayArea").style.display = "block";
+    setTimeout(function () {
+		document.getElementById("loading").style.display = "none";
+		document.getElementById("screen-content").style.display = "block";
+		document.getElementById("screen-content").style.opacity = "1";
+    },4000);
+
+
+});
+
 function getPos(e){
 	width=document.documentElement.clientWidth;
 	height=document.documentElement.clientHeight;
@@ -104,4 +115,7 @@ function resize(){
 	    document.getElementById("screen").style.left = ooaleft;
 	    document.getElementById("screen").style.top = ooatop;
     }
+
+    document.getElementById("screen").style.display = "flex";
+
 }
