@@ -19,17 +19,49 @@ body{
 }
 
 h1{
-	font-size: 4em;
+	font-size: 3.5em;
 	text-align: center;
+	margin-top: 0;
+	margin-bottom: 0.5em;
+	order: 1;
+  	overflow: hidden; /* Ensures the content is not revealed until the animation */
+  	padding-right: .10em;
+	border-right: .10em solid white; /* The typwriter cursor */
+	white-space: nowrap; /* Keeps the content on a single line */
+	margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+	animation: 
+    typing 1.5s steps(13, end),
+    blink-caret 1s step-end infinite;
+    animation-delay: 0s,1.5s;
+}
+
 }
 
 h2{
-	font-size: 2em;
+	font-size:1.5em;
+	margin:0;
+}
+
+a{
+	color: white;
+	display: inline;
+	opacity: 0;
+	margin: 0;
+	text-decoration: none;
 	text-align: center;
+	order: 2;
+    -webkit-animation: fadein 2s forwards ease-in-out; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 2s forwards ease-in-out; /* Firefox < 16 */
+        -ms-animation: fadein 2s forwards ease-in-out; /* Internet Explorer */
+         -o-animation: fadein 2s forwards ease-in-out; /* Opera < 12.1 */
+            animation: fadein 2s forwards ease-in-out;
+  	animation-delay: 2.5s;
 }
 
 .email{
-	color: blue;
+	display: inline;
+	color: white;
+	float: left;
 	padding-right: 0.2em;
 }
 
@@ -224,6 +256,7 @@ h2{
 
 .screen{
 	display: none;
+	color: white;
 	position: absolute;
 	justify-content: center;
 	align-items: center;
@@ -232,25 +265,26 @@ h2{
 	left: 26vw;
 	z-index: 5;
 	flex-direction: column;
+	background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+	background-size: 400% 400%;
+	animation: 2s fadein forwards ease-in-out,
+	Gradient 15s ease infinite;
+	animation-delay: 0s, 2.5s;
 }
 
 #screen-content{
 	display: none;
-	opacity: 0;
-    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadein 2s; /* Firefox < 16 */
-        -ms-animation: fadein 2s; /* Internet Explorer */
-         -o-animation: fadein 2s; /* Opera < 12.1 */
-            animation: fadein 2s;
+	-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: fadein 1.5s forwards ease-in-out;
 }
 
 #loading{
 	opacity: 1;
-    -webkit-animation: fadeinout 3s forwards ease-in-out; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadeinout 3s forwards ease-in-out; /* Firefox < 16 */
-        -ms-animation: fadeinout 3s forwards ease-in-out; /* Internet Explorer */
-         -o-animation: fadeinout 3s forwards ease-in-out; /* Opera < 12.1 */
-            animation: fadeinout 3s forwards ease-in-out;
+    animation: fadein 1.5s forwards ease-in-out,
+    fadeout 1.5s forwards ease-in-out;
+    animation-delay: 0s, 1.5s;
 }
 
 .lds-ring {
@@ -267,10 +301,10 @@ h2{
   width: 51px;
   height: 51px;
   margin: 6px;
-  border: 6px solid #a0a0a0;
+  border: 6px solid white;
   border-radius: 50%;
   animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: #a0a0a0 transparent transparent transparent;
+  border-color: white transparent transparent transparent;
 }
 .lds-ring div:nth-child(1) {
   animation-delay: -0.45s;
@@ -281,6 +315,12 @@ h2{
 .lds-ring div:nth-child(3) {
   animation-delay: -0.15s;
 }
+
+#envelope{
+    transform: scale(2);
+    margin: 1em;
+}
+
 @keyframes lds-ring {
   0% {
     transform: rotate(0deg);
@@ -322,41 +362,80 @@ h2{
 
 
 
-@keyframes fadeinout {
-    0% { opacity: 0; }
-    25%   { opacity: 1; }
-    75%   { opacity: 1; }
-    100%   { opacity: 0; }
+@keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
 }
 
 /* Firefox < 16 */
-@-moz-keyframes fadeinout {
-    0% { opacity: 0; }
-    25%   { opacity: 1; }
-    75%   { opacity: 1; }
-    100%   { opacity: 0; }
+@-moz-keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
 }
 
 /* Safari, Chrome and Opera > 12.1 */
-@-webkit-keyframes fadeinout {
-    0% { opacity: 0; }
-    25%   { opacity: 1; }
-    75%   { opacity: 1; }
-    100%   { opacity: 0; }
+@-webkit-keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
 }
 
 /* Internet Explorer */
-@-ms-keyframes fadeinout {
-    0% { opacity: 0; }
-    25%   { opacity: 1; }
-    75%   { opacity: 1; }
-    100%   { opacity: 0; }
+@-ms-keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
 }
 
 /* Opera < 12.1 */
-@-o-keyframes fadeinout {
-    0% { opacity: 0; }
-    25%   { opacity: 1; }
-    75%   { opacity: 1; }
-    100%   { opacity: 0; }
+@-o-keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: white; }
+}
+
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
 }

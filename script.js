@@ -2,8 +2,7 @@ window.addEventListener("DOMContentLoaded", function(event) {
 	document.getElementById("displayArea").style.display = "block";
     setTimeout(function () {
 		document.getElementById("loading").style.display = "none";
-		document.getElementById("screen-content").style.display = "block";
-		document.getElementById("screen-content").style.opacity = "1";
+		document.getElementById("screen-content").style.display = "flex";
     },4000);
 
 
