@@ -85,6 +85,7 @@ a{
 	object-fit: cover;
     opacity: 0.05;
     filter: alpha(opacity=5); /* For IE8 and earlier */
+    background-blend-mode: overlay;
 	z-index: 3;
 }
 
