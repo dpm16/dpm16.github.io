@@ -88,11 +88,14 @@ function resize(){
 	width=document.documentElement.clientWidth;
 	height=document.documentElement.clientHeight;
 	aspect=width/height;
-
+	var avail_height=window.screen.availHeight
 	var first_resize = true;
 
 	if (height >= width) {
 		var mobile = document.createElement('link');
+		var body = document.getElementById('displayArea');
+	    document.getElementById("screen").style.height = avail_height;
+
 		mobile.id = 'mobile';
 		mobile.rel = 'stylesheet';
 		mobile.type = 'text/css';

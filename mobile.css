@@ -1,4 +1,10 @@
 @media only screen and (max-width: 768px){
+	html{
+		position: fixed;
+	}
+	body{
+		overflow: hidden!important;
+	}
 
 	h1{
 		font-size: 8vw;
@@ -44,10 +50,10 @@
 		position: absolute;
 	    background-image: linear-gradient(#f8f8f8, #ededed);
 		bottom: 0;
-		width: 110%;
-		height: 50%;
-		left: -5%;
-		bottom: -5%;
+		width: 100%;
+		height: 20%;
+		left: 0%;
+		bottom: 0;
 		z-index: 4;
 	}
 
@@ -200,9 +206,9 @@
 		justify-content: center;
 		align-items: center;
 		width: 86vw !important;
-		height: 27.8vh !important;
+		height: 27.3% !important;
 		left: 6.5vw !important;
-		top: 35.5vh !important;
+		top: 35.8% !important;
 		z-index: 5;
 		flex-direction: column;
 		background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
