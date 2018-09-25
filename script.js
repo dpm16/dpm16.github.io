@@ -1,10 +1,10 @@
 window.addEventListener("DOMContentLoaded", function(event) {
+	resize();
 	document.getElementById("displayArea").style.display = "block";
     setTimeout(function () {
 		document.getElementById("loading").style.display = "none";
 		document.getElementById("screen-content").style.display = "flex";
     },4000);
-
 
 });
 
@@ -88,6 +88,27 @@ function resize(){
 	width=document.documentElement.clientWidth;
 	height=document.documentElement.clientHeight;
 	aspect=width/height;
+
+	var first_resize = true;
+
+	if (height >= width) {
+		var mobile = document.createElement('link');
+		mobile.id = 'mobile';
+		mobile.rel = 'stylesheet';
+		mobile.type = 'text/css';
+		mobile.href = 'mobile.css';
+		document.head.appendChild(mobile);
+		first_resize = false;
+	}
+	if (height < width){
+		if (first_resize){}
+		else{
+			var mobile = document.getElementById('mobile');
+			mobile.parentNode.removeChild(mobile);
+		}
+
+		first_resize = false;
+	}
 
 
     var ooawidth="49.8vw";
