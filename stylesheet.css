@@ -22,7 +22,7 @@ h1{
 	font-size: 3.5em;
 	text-align: center;
 	margin-top: 0;
-	margin-bottom: 0.5em;
+	padding-bottom: 0.5em;
 	order: 1;
   	overflow: hidden; /* Ensures the content is not revealed until the animation */
   	padding-right: .10em;
@@ -279,6 +279,12 @@ a{
     align-items: center;
     flex-direction: column;
     animation: fadein 1.5s forwards ease-in-out;
+}
+
+.cv{
+	width: 40px;
+	margin-top:10px;
+	object-fit: contain;
 }
 
 #loading{
