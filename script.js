@@ -8,7 +8,23 @@ window.addEventListener("DOMContentLoaded", function(event) {
 
 });
 
+function isMobile() { 
+	if (navigator.userAgent.match(/Android/i) 
+                || navigator.userAgent.match(/webOS/i) 
+                || navigator.userAgent.match(/iPhone/i)  
+                || navigator.userAgent.match(/iPad/i)  
+                || navigator.userAgent.match(/iPod/i) 
+                || navigator.userAgent.match(/BlackBerry/i) 
+                || navigator.userAgent.match(/Windows Phone/i)) { 
+                return true; 
+            } else { 
+				return false; 
+            } 
+} 
+
+
 function getPos(e){
+	if (!isMobile()) {
 	width=document.documentElement.clientWidth;
 	height=document.documentElement.clientHeight;
 	x=e.clientX;
@@ -27,10 +43,11 @@ function getPos(e){
 	layer1(relx,rely);
 	layer2(relx,rely);
 	layer3(relx,rely);
-
+	}
 }
 
 function layer1(x,y){
+
 	transformx = (0.5 - x) * 60;
 	transformy = (0.5 - y) * 60;
 	transform = "translate("+transformx+"px" +","+transformy+"px"+")";
